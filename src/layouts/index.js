@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { css } from 'emotion'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { css } from 'emotion';
 
-import Header from '../components/Header'
-import Menu from '../components/Menu'
-import Footer from '../components/Footer'
+import Header from '../components/Header';
+import Menu from '../components/Menu';
+import Footer from '../components/Footer';
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -14,12 +14,12 @@ const TemplateWrapper = ({ children }) => (
       meta={[
         {
           name: 'description',
-          content: 'Veebileht suvisele lapsepõlvemaagia festivalile',
+          content: 'Veebileht suvisele lapsepõlvemaagia festivalile'
         },
         {
           name: 'keywords',
-          content: 'lapsepõlv, maagia, festival, haapsalu, lapsepõlvemaagia',
-        },
+          content: 'lapsepõlv, maagia, festival, haapsalu, lapsepõlvemaagia'
+        }
       ]}
     />
     <Header />
@@ -33,15 +33,15 @@ const TemplateWrapper = ({ children }) => (
       })}
     >
       {children()}
-      <br />
+      <br  />
     </div>
 
     <Footer />
   </div>
-)
+);
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
+  children: PropTypes.func
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;
