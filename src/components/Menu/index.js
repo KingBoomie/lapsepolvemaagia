@@ -5,6 +5,7 @@ import { css } from 'emotion'
 const MenuLink = props => (
   <Link
     to={props.to}
+    alt={props.alt}
     className={css({
       width: '100%',
       textAlign: 'center',
@@ -110,12 +111,12 @@ export default props => (
       },
     })}
   >
-    <MenuLink to="/">Lapsepõlvemaagia</MenuLink>
-    <MenuLink to="/ajakava">Ajakava</MenuLink>
-    <MenuLink to="/kauplejale">Kauplejale</MenuLink>
-    <MenuLink to="/sipsik">Sipsiku ümbermaailmareis</MenuLink>
-    <MenuLink to="/arhiiv">Arhiiv</MenuLink>
-    <MenuLink to="/vanavanemad">Mis on sinu vanavanemate nimed?</MenuLink>
-    <MenuLink to="/Toetajad">Toetajad</MenuLink>
+    <MenuLink to="/" alt="Link avalehele.">Lapsepõlvemaagia</MenuLink>
+    <MenuLink to="/ajakava" alt="Link ajakava lehele.">Ajakava</MenuLink>
+    <MenuLink to="/kauplejale" alt="Link kauplejatele mõeldud infoga lehele.">Kauplejale</MenuLink>
+    <MenuLink to="/sipsik" alt="Link Sipsiku ümbermaailmareisi lehele.">Sipsiku ümbermaailmareis</MenuLink>
+    <MenuLink to="/arhiiv" alt="Link arhiivi lehele.">Arhiiv</MenuLink>
+    <MenuLink to="/vanavanemad" alt="Link küsitluse lehele.">Mis on sinu vanavanemate nimed?</MenuLink>
+    <MenuLink to="/Toetajad" alt="Link toetajate lehele.">Toetajad</MenuLink>
   </div>
 )

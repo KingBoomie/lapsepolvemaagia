@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from 'emotion'
 
 const Toetaja = props => (
-  <a href={props.leht}>
+  <a href={props.leht} alt={props.alt}>
     <div
       className={css({
         // boxShadow: '0px 8px 5px -5px #888888', // replaced with border to make it seem more like a button

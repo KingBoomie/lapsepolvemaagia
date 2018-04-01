@@ -21,7 +21,9 @@ const TemplateWrapper = ({ children }) => (
           content: 'lapsepõlv, maagia, festival, haapsalu, lapsepõlvemaagia'
         }
       ]}
-    />
+      >
+        <html lang="et"/>
+    </Helmet>
     <Header />
     <Menu />
 
