@@ -2,6 +2,9 @@ import React from 'react'
 import styled, { css } from 'react-emotion'
 import Link from 'gatsby-link'
 
+import LanguageSwitcher from './LanguageSwitcher';
+
+
 const FooterText = styled.h4({
     margin: '0.2em',
     // color: '#bee0f7', 
@@ -38,7 +41,12 @@ function Footer() {
                 <FooterText >IBAN EE741700017003849060</FooterText>
                 <FooterText >E-mail: haapsalulastefest@mail.ee</FooterText>
                 <FooterText >Tel. +372 52 14210</FooterText>
+               <div class = {LanguageSwitcher}>
+               <button class="LanguageSwitcher__button">English</button>
+               <button class="LanguageSwitcher__button">Estonian</button></div>
             </AboutInformation>
+
+            
             
             <Link to="/siseveeb" ><FooterText >Siseveeb</FooterText></Link>
         </div>

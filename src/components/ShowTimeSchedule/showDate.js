@@ -2,10 +2,10 @@ import React from 'react'
 import { css } from 'emotion'
 
 
-const ShowTimeSchedule = (props) => (
+const showDate = (props) => (
     <div
       className={css({
-        background: 'midnightblue',
+        background: 'black',
         color: 'white',
         fontSize: '1vw',
         border:'solid',
@@ -14,6 +14,8 @@ const ShowTimeSchedule = (props) => (
         textAlign: 'left',
         boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
         marginBottom:'15',
+        marginLeft: 'auto',
+        marginRight: 'auto',
        
       })}
     >
@@ -21,4 +23,4 @@ const ShowTimeSchedule = (props) => (
     </div>
 )
 
-export default ShowTimeSchedule
+export default showDate

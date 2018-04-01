@@ -4,6 +4,7 @@ import { css } from 'emotion'
 
 import HaapsaluMap from '../components/Map.js'
 import TimeCounter from '../components/TimeCounter'
+import PageHeader from '../components/PageHeader'
 
 const IndexPage = () => ( // TODO, something here is fucked up, but it works atm
   <div className={ css(`
@@ -32,6 +33,8 @@ const IndexPage = () => ( // TODO, something here is fucked up, but it works atm
         height: 100%;
       }
     `)}/>
+
+
     
   </div>
 )

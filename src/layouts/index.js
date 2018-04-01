@@ -8,6 +8,7 @@ import Menu from '../components/Menu'
 import Footer from '../components/Footer'
 
 
+
 const TemplateWrapper = ({ children }) => (
   <div >
 
@@ -20,6 +21,8 @@ const TemplateWrapper = ({ children }) => (
     />
     <Header />
     <Menu />
+  
+
 
     <div
       className={css({
@@ -33,7 +36,10 @@ const TemplateWrapper = ({ children }) => (
     </div>
 
     <Footer />
+    
   </div>
+
+
 )
 
 TemplateWrapper.propTypes = {
