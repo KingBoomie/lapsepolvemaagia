@@ -1,42 +1,26 @@
 {
-    "Hi people": {
-      "origin": [
-        [
-          "src/pages/index.js",
-          8
-        ]
+  "Hi people": {
+    "origin": [
+      [
+        "src/pages/inde.js",
+        69
       ]
-    },
-    "Welcome to your new Gatsby site.": {
-      "origin": [
-        [
-          "src/pages/index.js",
-          10
-        ]
+    ]
+  },
+  "Welcome to your new Gatsby site.": {
+    "origin": [
+      [
+        "src/pages/inde.js",
+        72
       ]
-    },
-    "Now go build something great.": {
-      "origin": [
-        [
-          "src/pages/index.js",
-          11
-        ]
+    ]
+  },
+  "Now go build something great.": {
+    "origin": [
+      [
+        "src/pages/inde.js",
+        74
       ]
-    },
-    "/page-2": {
-      "origin": [
-        [
-          "src/pages/index.js",
-          12
-        ]
-      ]
-    },
-    "Go to page 2": {
-      "origin": [
-        [
-          "src/pages/index.js",
-          12
-        ]
-      ]
-    }
+    ]
   }
+}

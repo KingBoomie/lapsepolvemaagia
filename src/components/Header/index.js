@@ -8,7 +8,7 @@ console.log(banner)
 
 function Header() {
   return (
-    <Link to="/" >
+    <Link to="/">
       <img src={banner} alt={'Lapsepõlvemaagia poster'} />
     </Link>
   )

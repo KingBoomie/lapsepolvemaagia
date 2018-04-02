@@ -4,25 +4,27 @@
   "version": "1.0.0",
   "author": "TODO",
   "dependencies": {
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.42",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.42",
+    "@babel/preset-react": "^7.0.0-beta.42",
     "@lingui/babel-plugin-extract-messages": "^2.0.5",
+    "@lingui/babel-preset-react": "^2.0.5",
     "@lingui/react": "^2.0.5",
+    "cross-env": "^5.1.4",
     "emotion": "^9.1.0",
     "emotion-server": "^9.1.0",
     "gatsby": "^1.9.243",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-emotion": "^1.1.16",
     "gatsby-plugin-react-helmet": "^2.0.9",
+    "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-plugin-typography": "^1.7.18",
-    "i18n-harmony": "^1.6.1",
-    "i18next": "^10.6.0",
-    "i18next-browser-languagedetector": "^2.1.1",
-    "i18next-xhr-backend": "^1.5.1",
     "react-emotion": "^9.1.0",
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.0",
     "react-i18next": "^7.5.1",
     "react-spinkit": "^3.0.0",
-    "redux-i18n": "^1.5.12",
     "typography-theme-lawton": "^0.15.10"
   },
   "keywords": [
@@ -34,10 +36,16 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "extract": "cross-env BABEL_ENV=extract lingui extract --clean"
   },
   "devDependencies": {
-    "@lingui/babel-preset-react": "^2.0.5",
     "prettier": "^1.11.1"
+  }, 
+  "lingui": {
+    "fallbackLocale": "en",
+    "sourceLocale": "en",
+    "localeDir": "src/locale",
+    "format": "minimal"
   }
 }

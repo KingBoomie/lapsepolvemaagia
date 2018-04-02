@@ -6,13 +6,28 @@
 
  // You can delete this file if you're not using it
 
- const fs = require("fs-extra");
-const path = require("path");
+ const { languages, defaultLanguage } = require('./src/i18n-config')
 
-exports.onPostBuild = () => {
-  console.log("Copying locales");
-  fs.copySync(
-    path.join(__dirname, "/src/locales"),
-    path.join(__dirname, "/public/locales")
-  );
-};
+ console.log(languages, defaultLanguage)
+ 
+ exports.onCreatePage = async ({ page, boundActionCreators }) => {
+   const { createPage, deletePage } = boundActionCreators
+ 
+   return new Promise((resolve, reject) => {
+     deletePage(page)
+     languages.map((language) => {
+       let newPage = Object.assign({}, page, {
+         originalPath: page.path,
+         path: language === defaultLanguage ? page.path : '/' + language + page.path,
+         context: {
+           lang: language
+         }
+       })
+ 
+       // console.log('creating', newPage)
+       createPage(newPage)
+     })
+ 
+     resolve()
+   })
+ }

@@ -6,8 +6,10 @@ import HaapsaluMap from '../components/Map.js'
 import TimeCounter from '../components/TimeCounter'
 import PageHeader from '../components/PageHeader'
 
-const IndexPage = () => ( // TODO, something here is fucked up, but it works atm
-  <div className={ css(`
+const IndexPage = () => (
+  // TODO, something here is fucked up, but it works atm
+  <div
+    className={css(`
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: 1fr;
@@ -21,23 +23,21 @@ const IndexPage = () => ( // TODO, something here is fucked up, but it works atm
         "box map";
       
     }
-  `
-    )}>
-    <TimeCounter className={css( `grid-area: box` )}
-      untill={new Date(2018,8,11)}
+  `)}
+  >
+    <TimeCounter
+      className={css(`grid-area: box`)}
+      untill={new Date(2018, 8, 11)}
     />
-    <HaapsaluMap className={css(`
+    <HaapsaluMap
+      className={css(`
       grid-area: map;
       height: 200px;
       @media (min-width: 500px) {
         height: 100%;
       }
-    `)}/>
-
-   
-
-
-    
+    `)}
+    />
   </div>
 )
 

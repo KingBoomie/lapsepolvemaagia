@@ -1,29 +1,29 @@
-import React, { Component } from "react";
-import classNames from "classnames";
-import { translate } from "react-i18next";
+import React, { Component } from 'react'
+import classNames from 'classnames'
+import { translate } from 'react-i18next'
 
 class LanguageSwitcher extends Component {
   constructor(props) {
-    super(props);
-    const { i18n } = this.props;
-    this.state = { language: i18n.language };
+    super(props)
+    const { i18n } = this.props
+    this.state = { language: i18n.language }
 
-    this.handleChangeLanguage = this.handleChangeLanguage.bind(this);
+    this.handleChangeLanguage = this.handleChangeLanguage.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ language: nextProps.i18n.language });
+    this.setState({ language: nextProps.i18n.language })
   }
 
   handleChangeLanguage(lng) {
-    const { i18n } = this.props;
-    i18n.changeLanguage(lng);
+    const { i18n } = this.props
+    i18n.changeLanguage(lng)
   }
 
   renderLanguageChoice({ code, label }) {
-    const buttonClass = classNames("LanguageSwitcher__button", {
-      "LanguageSwitcher__button--selected": this.state.language === code,
-    });
+    const buttonClass = classNames('LanguageSwitcher__button', {
+      'LanguageSwitcher__button--selected': this.state.language === code,
+    })
 
     return (
       <button
@@ -33,21 +33,21 @@ class LanguageSwitcher extends Component {
       >
         {label}
       </button>
-    );
+    )
   }
 
   render() {
     const languages = [
-      { code: "en", label: "English" },
-      { code: "et", label: "Estonian" },
-    ];
+      { code: 'en', label: 'English' },
+      { code: 'et', label: 'Estonian' },
+    ]
 
     return (
       <div className="LanguageSwitcher">
         {languages.map(language => this.renderLanguageChoice(language))}
       </div>
-    );
+    )
   }
 }
 
-export default translate("LanguageSwitcher")(LanguageSwitcher);
+export default translate('LanguageSwitcher')(LanguageSwitcher)
