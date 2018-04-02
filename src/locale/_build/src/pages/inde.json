@@ -1,0 +1,26 @@
+{
+  "Hi people": {
+    "origin": [
+      [
+        "src/pages/inde.js",
+        69
+      ]
+    ]
+  },
+  "Welcome to your new Gatsby site.": {
+    "origin": [
+      [
+        "src/pages/inde.js",
+        72
+      ]
+    ]
+  },
+  "Now go build something great.": {
+    "origin": [
+      [
+        "src/pages/inde.js",
+        74
+      ]
+    ]
+  }
+}

@@ -118,5 +118,6 @@ export default props => (
     <MenuLink to="/arhiiv" alt="Link arhiivi lehele.">Arhiiv</MenuLink>
     <MenuLink to="/vanavanemad" alt="Link küsitluse lehele.">Mis on sinu vanavanemate nimed?</MenuLink>
     <MenuLink to="/Toetajad" alt="Link toetajate lehele.">Toetajad</MenuLink>
+    <MenuLink to="/langTest" alt="hm" >languagetest</MenuLink>
   </div>
 )

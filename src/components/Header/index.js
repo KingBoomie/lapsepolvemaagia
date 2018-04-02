@@ -4,8 +4,6 @@ import banner from './banner.jpg'
 
 import { css } from 'emotion'
 
-console.log(banner)
-
 function Header() {
   return (
     <Link to="/">

@@ -14,15 +14,15 @@ const TemplateWrapper = ({ children }) => (
       meta={[
         {
           name: 'description',
-          content: 'Veebileht suvisele lapsepõlvemaagia festivalile'
+          content: 'Veebileht suvisele lapsepõlvemaagia festivalile',
         },
         {
           name: 'keywords',
-          content: 'lapsepõlv, maagia, festival, haapsalu, lapsepõlvemaagia'
-        }
+          content: 'lapsepõlv, maagia, festival, haapsalu, lapsepõlvemaagia',
+        },
       ]}
-      >
-        <html lang="et"/>
+    >
+      <html lang="et" />
     </Helmet>
     <Header />
     <Menu />
@@ -35,7 +35,7 @@ const TemplateWrapper = ({ children }) => (
       })}
     >
       {children()}
-      <br  />
+      <br />
     </div>
 
     <Footer />
@@ -43,7 +43,7 @@ const TemplateWrapper = ({ children }) => (
 );
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func
+  children: PropTypes.func,
 };
 
 export default TemplateWrapper;
