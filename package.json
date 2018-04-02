@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "TODO",
   "dependencies": {
+    "@lingui/react": "^2.0.5",
     "emotion": "^9.1.0",
     "emotion-server": "^9.1.0",
     "gatsby": "^1.9.243",
@@ -35,6 +36,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@lingui/babel-preset-react": "^2.0.5",
     "prettier": "^1.11.1"
   }
 }

@@ -6,7 +6,6 @@ import { css } from 'emotion'
 import Header from '../components/Header'
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
-import PageHeader from '../components/PageHeader';
 
 
 
@@ -22,7 +21,7 @@ const TemplateWrapper = ({ children }) => (
     />
     <Header />
     <Menu />
-  <PageHeader />
+
 
 
     <div
@@ -46,5 +45,7 @@ const TemplateWrapper = ({ children }) => (
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
 }
+
+
 
 export default TemplateWrapper
