@@ -48,6 +48,11 @@ const LangSelector = props => (
           onClick={e => props.onLangClick('ro')}
           selected={props.lang == 'ro'}
         />
+         <LangText
+          lang="et"
+          onClick={e => props.onLangClick('et')}
+          selected={props.lang == 'et'}
+        />
       </h1>
     </div>
   </div>
