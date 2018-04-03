@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 
+
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
