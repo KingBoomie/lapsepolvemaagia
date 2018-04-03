@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'react-emotion'
 import Link from 'gatsby-link'
 
-import LanguageSwitcher from './LanguageSwitcher'
+
 
 const FooterText = styled.h4({
   margin: '0.2em',
