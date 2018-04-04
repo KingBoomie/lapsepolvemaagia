@@ -18,7 +18,7 @@ const TemplateWrapper = ({ children }) => (
         },
         {
           name: 'keywords',
-          content: 'lapsepõlv, maagia, festival, haapsalu, lapsepõlvemaagia',
+          content: 'lapsepõlv, maagia, festival, haapsalu, lapsepõlvemaagia ,lapsepolvemaagia'
         },
       ]}
     >
