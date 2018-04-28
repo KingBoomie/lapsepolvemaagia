@@ -1,15 +1,15 @@
-const languages = ['en', 'ro']
+const languages = ['en', 'et']
 const catalogs = {
   en: { messages: require('./locale/en/messages.json') },
-  ro: { messages: require('./locale/ro/messages.json') },
+  et: { messages: require('./locale/et/messages.json') },
 }
 
-const defaultLanguage = 'en'
+const defaultLanguage = 'et'
 
 const prefix = lang => (lang == defaultLanguage ? '/' : '/' + lang)
 const deprefix = pathname =>
-  pathname.startsWith('/ro/') ? pathname.substr(4) : pathname
-const langFromPath = pathname => (pathname.startsWith('/ro/') ? 'ro' : 'en')
+  pathname.startsWith('/en/') ? pathname.substr(4) : pathname
+const langFromPath = pathname => (pathname.startsWith('/en/') ? 'en' : 'et')
 
 exports.defaultLanguage = defaultLanguage
 exports.languages = languages
