@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 
+import icon from '../icon.png'
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
@@ -21,6 +22,10 @@ const TemplateWrapper = ({ children }) => (
           content: 'lapsepõlv, maagia, festival, haapsalu, lapsepõlvemaagia ,lapsepolvemaagia'
         },
       ]}
+      link={[
+        { rel: 'shortcut icon', type: 'image/png', href: `${icon}` }
+    ]}
+
     >
       <html lang="et" />
     </Helmet>

@@ -4,6 +4,12 @@ import { cx, css } from 'emotion';
 
 import HaapsaluMap from '../components/Map';
 import TimeCounter from '../components/TimeCounter';
+import LangText from '../components/LangText'
+import LangSelector from '../components/LangSelector'
+import { I18nProvider, withI18n, Trans } from '@lingui/react'
+import { catalogs, prefix, deprefix, langFromPath } from '../i18n-config'
+import { navigateTo } from 'gatsby-link'
+
 
 const DescriptionStyle = css({
   display: 'flex',
@@ -15,7 +21,10 @@ const DescriptionStyle = css({
   lineHeight: '1.8',
 });
 
-const IndexPage = () => (
+
+
+const Wrapper = (props) => (
+  
   <div
     className={css(`
     display: grid;
@@ -37,7 +46,8 @@ const IndexPage = () => (
       
     }
   `)}
-  >
+  >   <LangSelector lang={props.lang} onLangClick={props.onLangChange} />
+  
     <TimeCounter
       className={css(`grid-area: box`)}
       untill={new Date('2018-08-11T11:00:00+03:00')}
@@ -52,39 +62,65 @@ const IndexPage = () => (
     `)}
     />
     <div className={cx(DescriptionStyle, css({ gridArea: 'desc' }))}>
-      <p>
-        Lapsepõlvemaagia keskendub pärimusele ning Läänemaa tavadele,
-        vanavanemate ja lastelaste lugudele ning koostegemisele.
-      </p>
-      <p>
-        Tahame festivaliga näidata, et tähtis ei ole tehnoloogiline vidin, vaid
-        koosveedetud aeg ning kuulatud tarkuseterad, mis on peidetud festivali
-        melusse.
-      </p>
-      <p>
-        Esinevad Läänemaa andekad lapsed ning toimuvad töötoad, töötoad, kus
-        õpitakse päristöid.
-      </p>
+       <Trans render="DescriptionStyle">
+      The Childhood Magic focuses on the tradition and the practices of Läänemaa, grandparents and grandchildren.                         
+       </Trans>
+      <p></p>
+      <Trans render="DescriptionStyle">
+
+        We want to show the festival that the technological gadget is important, but the time consumed and the wisdom that was listened to, which is hidden behind the festival lies.
+
+        </Trans>
+        <p></p>
+        <Trans render="DescriptionStyle">
+        The talented children of Läänemaa will be performed and workshops will be held in which the works will be studied.
+        </Trans>
     </div>
+
     <div className={cx(DescriptionStyle, css({ gridArea: 'desc2' }))}>
-      <p>Festivali sihtgrupiks on lapsed, nende vanemad ja vanavanemad.</p>
-      <p>
-        Festival viiakse läbi kultuurifestivalina, mille eesmärgiks on luua
-        kontakt erinevate põlvkondade lapsepõlve mängude, muusika, tegevuste,
-        reaalsete igapäevaelu tööde vahel.
-      </p>
-      <p>
-        Ühest küljest on see tänaste laste LAPSEPÕLVEMAA ja teisalt kui
-        jalutuskäik minevikku, et meenutada ja edasi anda pärandit.
-      </p>
-      <p>
-        Suur roll on kohaidentiteedil – Läänemaa. Lapsepõlvemaagia on Haapsalu
-        ja Läänemaa laste kultuurifestival, kus kohtuvad laul, tants, pillimäng,
-        kunst ja töötoad.
-      </p>
-      <p> See on laste ja perede pidu.</p>
+    <Trans render="DescriptionStyle">
+    The target group of the festival is children, their parents and grandparents.
+      </Trans>
+      <p></p>
+      <Trans render="DescriptionStyle">
+        The festival will be conducted as a cultural festival aimed at bringing together children of all generations between games, music, activities, and real-life work.
+      </Trans>
+      <p></p>
+      
+      <Trans render="DescriptionStyle">
+      On the one hand, it is the childhood of today's children, and on the other hand, as a walk to the past to remind and pass on the inheritance.
+      </Trans>
+      <p></p> 
+      <Trans render="DescriptionStyle">
+      A great role is played on the identity of the place - Läänemaa. Childhood Magic is a cultural festival of children from Haapsalu and Läänemaa, where songs, dance, pitching, art and workshops meet.
+      </Trans>
+      <p></p>
+      <Trans render="DescriptionStyle">This is the party for children and families.</Trans>
     </div>
   </div>
 );
 
-export default IndexPage;
+
+class IndexPage extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  onLangChange = lang => {
+    navigateTo(prefix(lang) + deprefix(this.props.location.pathname))
+  }
+
+  render = () => {
+    
+    const lang = langFromPath(this.props.location.pathname)
+
+    return (
+      <I18nProvider language={lang} catalogs={catalogs}>
+        <Wrapper {...this.props} lang={lang} onLangChange={this.onLangChange} />
+      </I18nProvider>
+    )
+
+  }
+}
+
+
+export default withI18n()(IndexPage);
