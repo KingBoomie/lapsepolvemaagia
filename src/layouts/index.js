@@ -7,11 +7,8 @@ import Header from '../components/Header';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 
-<<<<<<< HEAD
 import icon from '../icon.png'
-=======
 
->>>>>>> 78a5903f1ae52badcd019b2cb8bf06867f72d281
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
