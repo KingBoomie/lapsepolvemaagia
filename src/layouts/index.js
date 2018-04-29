@@ -32,7 +32,7 @@ const TemplateWrapper = ({ children }) => (
     </Helmet>
     <Header />
     <Menu />
-
+    
     <div
       className={css({
         margin: '0 auto',

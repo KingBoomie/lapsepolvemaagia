@@ -46,7 +46,16 @@ const Wrapper = (props) => (
       
     }
   `)}
-  >   <LangSelector lang={props.lang} onLangClick={props.onLangChange} />
+  >   <LangSelector lang={props.lang} onLangClick={props.onLangChange}
+  className={css(`
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+  textAlign: 'center',
+  fontWeight: '600',
+  lineHeight: '1.8',
+    `)} />
   
     <TimeCounter
       className={css(`grid-area: box`)}

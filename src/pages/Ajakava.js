@@ -18,15 +18,15 @@ const Wrapper = (props) => (
 
     <showDate>11.8.2018.</showDate> <ShowTimeSchedule> 10.00-10.30 <Trans render="ShowTimeSchedule">Activity</Trans> A </ShowTimeSchedule>
 
-    <ActivityDescription><Trans render="ShowTimeSchedule">activity description (performers/workshop info)</Trans> </ActivityDescription> 
+    <ActivityDescription><Trans render="ActivityDescription">activity description (performers/workshop info)</Trans> </ActivityDescription> 
 
     <ShowTimeSchedule>10.30-11.00 <Trans render="ShowTimeSchedule"> Activity</Trans> B </ShowTimeSchedule>
     
-    <ActivityDescription> <Trans render="ShowTimeSchedule">activity description (performers/workshop info)</Trans> </ActivityDescription>
+    <ActivityDescription> <Trans render="ActivityDescription">activity description (performers/workshop info)</Trans> </ActivityDescription>
 
     <ShowTimeSchedule>11.00-11.30 <Trans render="ShowTimeSchedule">Activity</Trans> C</ShowTimeSchedule>
 
-    <ActivityDescription> <Trans render="ShowTimeSchedule">activity description (performers/workshop info)</Trans> </ActivityDescription>
+    <ActivityDescription> <Trans render="ActivityDescription">activity description (performers/workshop info)</Trans> </ActivityDescription>
     
   </div>
 )
