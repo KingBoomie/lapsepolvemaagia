@@ -6,6 +6,8 @@ import { css } from 'emotion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+import icon from '../icon.png'
+
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
@@ -17,9 +19,11 @@ const TemplateWrapper = ({ children }) => (
         },
         {
           name: 'keywords',
-          content: 'lapsepõlv, maagia, festival, haapsalu, lapsepõlvemaagia',
-        }
+          content:
+            'lapsepõlv, maagia, festival, haapsalu, lapsepõlvemaagia ,lapsepolvemaagia',
+        },
       ]}
+      link={[{ rel: 'shortcut icon', type: 'image/png', href: `${icon}` }]}
     />
     <Header />
 
@@ -31,7 +35,6 @@ const TemplateWrapper = ({ children }) => (
       })}
     >
       {children()}
-      <br  />
     </div>
 
     <Footer />
