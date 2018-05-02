@@ -4,8 +4,7 @@ import { cx, css } from 'emotion';
 
 import HaapsaluMap from '../components/Map';
 import TimeCounter from '../components/TimeCounter';
-import LangText from '../components/LangText'
-import LangSelector from '../components/LangSelector'
+import LangSelector from '../components/LanguageSelector'
 import { I18nProvider, withI18n, Trans } from '@lingui/react'
 import { catalogs, prefix, deprefix, langFromPath } from '../i18n-config'
 import { navigateTo } from 'gatsby-link'
