@@ -4,8 +4,15 @@ import {css} from 'emotion'
 import pilt1 from '../Toetajad/imatra.png';
 import pilt2 from '../Toetajad/garden.png';
 import Event from "../../components/Event";
+import { I18nProvider, withI18n, Trans } from '@lingui/react'
+import { navigateTo } from 'gatsby-link'
+import Header from '../components/Header'
+import { catalogs, prefix, deprefix, langFromPath } from '../i18n-config'
+import LangSelector from '../components/LanguageSelector'
 
 const AjakavaPage = () => (
+
+    
     <div>
         <h1>
             11.08.2018
