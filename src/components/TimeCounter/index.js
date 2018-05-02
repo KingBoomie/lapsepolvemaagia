@@ -21,6 +21,15 @@ function getTimeLeft(firstDate) {
     seconds: seconds,
   }
 }
+function getTimeText(timeObj) {
+  const { days, hours, minutes, seconds } = timeObj
+  const strings = [days, hours, minutes, seconds]
+    .filter(n => n)
+    .map(n => '' + n) // to string
+    .map(s => s.padStart(2, '0'))
+    .join(':')
+  return strings
+}
 
 const BigBox = ({ children }) => (
   <div
@@ -59,16 +68,13 @@ class TimeCounter extends React.Component {
     clearInterval(this.timer)
   }
   getOutputText() {
-    const { days, hours, minutes, seconds } = getTimeLeft(this.props.untill)
-    const strings = [days, hours, minutes, seconds]
-      .map(n => '' + n) // to string
-      .map(s => s.padStart(2, '0'))
-      .join(':')
-    return strings
+    const timeLeft = getTimeLeft(this.props.untill)
+    const timeText = getTimeText(timeLeft)
+    return timeText
   }
   useStupidJS() {
     const text = this.getOutputText()
-    document.getElementById('daysleft').innerHTML = '<p>' + text + '</p>'
+    document.getElementById('daysleft').innerHTML = `<p>${ text }</p>`
   }
   render() {
     return (
@@ -78,5 +84,6 @@ class TimeCounter extends React.Component {
     )
   }
 }
+
 
 export default TimeCounter

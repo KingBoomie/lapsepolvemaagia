@@ -40,7 +40,7 @@ const IndexPage = () => (
   >
     <TimeCounter
       className={css(`grid-area: box`)}
-      untill={new Date('2018-08-11T11:00:00+03:00')}
+      untill={new Date('2018-04-06T11:00:00+03:00')}
     />
     <HaapsaluMap
       className={css(`

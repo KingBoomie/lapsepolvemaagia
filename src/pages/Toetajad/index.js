@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import { css } from 'emotion';
 
-import Toetaja from '../../components/toetaja';
+import Toetaja from '../../components/Toetaja';
 import uksetehas from './uksetehas.png';
 import imatra from './imatra.png';
 import garden from './garden.png';

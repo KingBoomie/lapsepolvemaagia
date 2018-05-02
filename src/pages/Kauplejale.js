@@ -7,8 +7,7 @@ import { I18nProvider, withI18n, Trans } from '@lingui/react'
 import { navigateTo } from 'gatsby-link'
 import Header from '../components/Header'
 import { catalogs, prefix, deprefix, langFromPath } from '../i18n-config'
-import LangText from '../components/LangText'
-import LangSelector from '../components/LangSelector'
+import LangSelector from '../components/LanguageSelector'
 
 
 const Wrapper = (props) => (

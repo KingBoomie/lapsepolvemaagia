@@ -4,9 +4,7 @@ import Helmet from 'react-helmet';
 import { css } from 'emotion';
 
 import Header from '../components/Header';
-import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -20,13 +18,10 @@ const TemplateWrapper = ({ children }) => (
         {
           name: 'keywords',
           content: 'lapsepõlv, maagia, festival, haapsalu, lapsepõlvemaagia',
-        },
+        }
       ]}
-    >
-      <html lang="et" />
-    </Helmet>
+    />
     <Header />
-    <Menu />
 
     <div
       className={css({
@@ -36,7 +31,7 @@ const TemplateWrapper = ({ children }) => (
       })}
     >
       {children()}
-      <br />
+      <br  />
     </div>
 
     <Footer />
@@ -44,7 +39,7 @@ const TemplateWrapper = ({ children }) => (
 );
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.func
 };
 
 export default TemplateWrapper;
