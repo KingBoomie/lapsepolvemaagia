@@ -1,5 +1,6 @@
 import React from 'react'
 import Img from 'gatsby-image'
+import { css } from 'emotion'
 
 class Riiginimi extends React.Component {
     constructor(props){
@@ -14,6 +15,7 @@ class Riiginimi extends React.Component {
         })
     }
     render(){
+        console.log(this.props.nimi);
         return(
             <div onClick={this.toggleHidden.bind(this)}>
                 <h3>{this.props.nimi}</h3>
@@ -23,11 +25,22 @@ class Riiginimi extends React.Component {
     }
 }
 
-const Peidetav= (props) => (
-    <div className='modal'>
-       <Img resolutions={props.pilt} alt="Sipsiku foto."/>
-    </div>
-)
+const Peidetav= (props) => {
+    console.log(props)
+    const pildid = props.pilt.map((p, i) => <Img key={i} resolutions={p}/>);
+    return(
+    (
+        <div
+            className={css({
+                display: 'flex',
+                paddingRight: '20',
+                flexDirection: 'row',
+            })}
+        >
+            {pildid}
+        </div>
+    ))
+};
 
 
 export default Riiginimi

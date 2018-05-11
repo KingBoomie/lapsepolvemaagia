@@ -3,26 +3,40 @@ import Riik from '../../components/Riik'
 import pilt1 from '../Toetajad/imatra.png'
 import pilt2 from '../Toetajad/garden.png';
 
-const SipsikuPage = (props) => (
-    <div>
-      <h2>Sipsiku leht</h2>
-        {console.log(props)}
-        {
-            props.data.allImageSharp.edges.map(({node}, index) =>(
-                <Riik nimi={node.id} pilt={node.resolutions}/>
-            ))
+function groupBy(list, keyGetter) {
+    const map = new Map();
+    list.forEach((item) => {
+        const key = keyGetter(item);
+        const collection = map.get(key);
+        if (!collection) {
+            map.set(key, [item]);
+        } else {
+            collection.push(item);
         }
-      <Riik
-      nimi="Eesti"
-      pilt={pilt1}
-      />
-      <Riik
-      nimi="Läti"
-      pilt={pilt2}
-      />
-      
-    </div>
-)
+    });
+    return map;
+}
+
+const SipsikuPage = (props) => {
+    const riigidNimedega = props.data.allImageSharp.edges.map(({node}, index) => {
+        const folderNames = node.id.split('/');
+        const name = folderNames[folderNames.length-2];
+        return [name, node.resolutions];
+    })
+    const riigidGroup = groupBy(riigidNimedega, ([nimi, pilt]) => nimi);    
+    const riigid = Array.from(riigidGroup, ([riik, pildid]) => [riik,pildid.map(pilt => pilt[1])])
+    const riigiPildid = riigid.map((([riik,pildid])=> <Riik nimi={riik} pilt={pildid}/>));
+    return (
+        <div>
+            <h2>Sipsiku leht</h2>
+            {console.log(props)}
+            {
+              riigiPildid  
+            }
+
+        </div>
+    )
+}
 
 
 export default SipsikuPage
