@@ -1,0 +1,1 @@
+Open testLapse.side file in Selenium IDE and run.
