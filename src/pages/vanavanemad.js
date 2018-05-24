@@ -1,43 +1,33 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { css } from 'emotion';
 
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { I18nProvider, withI18n, Trans } from '@lingui/react'
-import { navigateTo } from 'gatsby-link'
-import Header from '../components/Header'
-import { catalogs, prefix, deprefix, langFromPath } from '../i18n-config'
-import LangSelector from '../components/LanguageSelector'
+const Vanavanemad = () => (
+    <div>
+      <h3>Osale küsitluses ja võida auhindu!</h3>
+        <p>Aita meil teada saada, millised on Läänemaa vanavanemate seas kõige populaarsemad nimed!</p>
+      <div
+          className={css({
+              fontWeight:"bold"
+          })}
+      >
+        <form name="vanavanemad" method="post" action="/saadetud" netlify>
+          Nimi:
+          <p><input type="text" name="nimi"/></p>
+          Vanus
+          <p><input type="text" name="vanus"/></p>
+          Vanaemade nimed:
+          <p><input type="text" name="vanaema1"/></p>
+          <p><input type="text" name="vanaema2"/></p>
+          Vanaisade nimed:
+          <p><input type="text" name="vanaisa1"/></p>
+          <p><input type="text" name="vanaisa2"/></p>
+          <p><input type="submit" value="Saada"/></p>
+        </form>
+      </div>
+    </div>
+)
+
+export default Vanavanemad
 
 
 
-const Wrapper = (props) => (
-  <div>
-    <LangSelector lang={props.lang} onLangClick={props.onLangChange} />
-    <Trans render="h1">Hi from Page</Trans> <Trans render = "h1">What are your grandparents names?</Trans>
-    {console.log(props)}
-    
-  </div>)
-
-class MisonSinuPage extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  onLangChange = lang => {
-    navigateTo(prefix(lang) + deprefix(this.props.location.pathname))
-  }
-
-  render = () => {
-    
-    const lang = langFromPath(this.props.location.pathname)
-
-    return (
-      <I18nProvider language={lang} catalogs={catalogs}>
-        <Wrapper {...this.props} lang={lang} onLangChange={this.onLangChange} />
-      </I18nProvider>
-    )
-
-  }
-}
-
-export default withI18n()(MisonSinuPage)

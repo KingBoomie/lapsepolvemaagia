@@ -23,7 +23,8 @@ const DescriptionStyle = css({
 
 
 const Wrapper = (props) => (
-  
+  <div>
+    <LangSelector lang={props.lang} onLangClick={props.onLangChange}/>
   <div
     className={css(`
     display: grid;
@@ -45,16 +46,7 @@ const Wrapper = (props) => (
       
     }
   `)}
-  >   <LangSelector lang={props.lang} onLangClick={props.onLangChange}
-  className={css(`
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: 'column',
-  textAlign: 'center',
-  fontWeight: '600',
-  lineHeight: '1.8',
-    `)} />
+  >   
   
     <TimeCounter
       className={css(`grid-area: box`)}
@@ -71,40 +63,39 @@ const Wrapper = (props) => (
     />
     <div className={cx(DescriptionStyle, css({ gridArea: 'desc' }))}>
        <Trans render="DescriptionStyle">
-      The Childhood Magic focuses on the tradition and the practices of Läänemaa, grandparents and grandchildren.                         
+      The Childhood Magic                         
        </Trans>
       <p></p>
       <Trans render="DescriptionStyle">
-
-        We want to show the festival that the technological gadget is important, but the time consumed and the wisdom that was listened to, which is hidden behind the festival lies.
-
+        We want to
         </Trans>
         <p></p>
         <Trans render="DescriptionStyle">
-        The talented children of Läänemaa will be performed and workshops will be held in which the works will be studied.
+        The talented
         </Trans>
     </div>
 
     <div className={cx(DescriptionStyle, css({ gridArea: 'desc2' }))}>
     <Trans render="DescriptionStyle">
-    The target group of the festival is children, their parents and grandparents.
+    The target
       </Trans>
       <p></p>
       <Trans render="DescriptionStyle">
-        The festival will be conducted as a cultural festival aimed at bringing together children of all generations between games, music, activities, and real-life work.
+        The festival
       </Trans>
       <p></p>
       
       <Trans render="DescriptionStyle">
-      On the one hand, it is the childhood of today's children, and on the other hand, as a walk to the past to remind and pass on the inheritance.
+      On the one hand
       </Trans>
       <p></p> 
       <Trans render="DescriptionStyle">
-      A great role is played on the identity of the place - Läänemaa. Childhood Magic is a cultural festival of children from Haapsalu and Läänemaa, where songs, dance, pitching, art and workshops meet.
+      A great role
       </Trans>
       <p></p>
-      <Trans render="DescriptionStyle">This is the party for children and families.</Trans>
+      <Trans render="DescriptionStyle">This is</Trans>
     </div>
+  </div>
   </div>
 );
 

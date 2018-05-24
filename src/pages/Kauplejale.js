@@ -1,44 +1,55 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { css } from 'emotion';
 
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import {I18nProvider, withI18n, Trans} from '@lingui/react'
-import {navigateTo} from 'gatsby-link'
-import Header from '../components/Header'
-import {catalogs, prefix, deprefix, langFromPath} from '../i18n-config'
-import LangSelector from '../components/LanguageSelector'
-
-
-class KauplejalePage extends React.Component {
-    constructor(){
-        super()
-        this.state = {
-            isHidden: true
-        }
-    }
-    toggleHidden(){
-        this.setState({
-            isHidden: !this.state.isHidden
-        })
-    }
-    render(){
-        return(
-            <div>
-                <button onClick={this.toggleHidden.bind(this)}>
-                    Vajuta siia!
-                </button>
-                {!this.state.isHidden && <Peidetav/>}
-            </div>
-        )
-    }
-}
-
-const Peidetav= () => (
-    <div className='modal'>
-        Peidetav sisu.
+const KauplejalePage = () => (
+    <div>
+        <h3>Kui soovite festivalil oma kaupa pakkuda, täitke palun järgnev ankeet.</h3>
+    <div
+        className={css({
+            fontWeight:"bold"
+        })}
+    >
+    <form name="registreerimine" method="post" action="/saadetud" netlify>
+        Nimi:
+        <p><input type="text" name="eesnimi"/></p>
+        Ettevõte:
+        <p><input type="text" name="ettevõte"/></p>
+        Telefoninumber:
+        <p><input type="text" name="telnr"/></p>
+        Meiliaadress:
+        <p><input type="text" name="meil"/></p>
+        Kauba kirjeldus:
+        <p><input type="text" name="kaup"/></p>
+        Kauba/müügileti foto:
+        <p
+            className={css({
+                fontWeight:"normal"
+            })}
+        ><input type="file" name="foto"/></p>
+        Arve saaja:
+        <p><input type="text" name="arve"/></p>
+        Vajaminev pind m2:
+        <p><input type="text" name="pind"/></p>
+        Kas vajate müügikohas elektrit?
+        <p
+            className={css({
+                fontWeight:"normal"
+            })}
+        >Vajan elektrit<input type="radio" name="gender" value="male"/></p>
+        <p
+            className={css({
+                fontWeight:"normal"
+            })}
+        >Ei vaja elektrit<input type="radio" name="gender" value="female"/></p>
+        Ettevõtte aadress:
+        <p><input type="text" name="aadress"/></p>
+        <input type="submit" value="Saada"/>
+    </form>
+    </div>
     </div>
 )
 
-
 export default KauplejalePage
+
+
+

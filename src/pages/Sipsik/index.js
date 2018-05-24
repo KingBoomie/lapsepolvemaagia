@@ -30,6 +30,11 @@ const SipsikuPage = (props) => {
         <div>
             <h2>Sipsiku leht</h2>
             {console.log(props)}
+            <div>
+                <p>
+                    
+                </p>
+            </div>
             {
               riigiPildid  
             }

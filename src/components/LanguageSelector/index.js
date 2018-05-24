@@ -3,33 +3,21 @@ import React from 'react';
 import LangText from './LangText';
 
 const LangSelector = props => (
-  <div
-    style={{
-      background: '#B5D135',
-      marginBottom: '1.45rem',
-      border: 'solid',
-    }}
-  >
+  <div>
     {console.log(props)}
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1rem 1rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
+    <div>
+      <p style={{ margin: 0 }}>
         <LangText
-          lang="en"
+          lang="English  "
           onClick={e => props.onLangClick('en')}
           selected={props.lang == 'en'}
         />
         <LangText
-          lang="et"
+          lang="Eesti"
           onClick={e => props.onLangClick('et')}
           selected={props.lang == 'et'}
         />
-      </h1>
+      </p>
     </div>
   </div>
 );
