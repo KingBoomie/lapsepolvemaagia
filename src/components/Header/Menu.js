@@ -112,13 +112,13 @@ export default props => (
       },
     })}
   >
-    <MenuLink to="/" alt="Link avalehele.">Lapsepõlvemaagia</MenuLink>
-    <MenuLink to="/ajakava" alt="Link ajakava lehele.">Ajakava</MenuLink>
-    <MenuLink to="/kauplejale" alt="Link kauplejatele mõeldud infoga lehele.">Kauplejale</MenuLink>
-    <MenuLink to="/sipsik" alt="Link Sipsiku ümbermaailmareisi lehele.">Sipsiku ümbermaailmareis</MenuLink>
-    <MenuLink to="/arhiiv" alt="Link arhiivi lehele.">Arhiiv</MenuLink>
-    <MenuLink to="/vanavanemad" alt="Link küsitluse lehele.">Mis on sinu vanavanemate nimed?</MenuLink>
-    <MenuLink to="/Toetajad" alt="Link toetajate lehele.">Toetajad</MenuLink>
+    <MenuLink to="/" title="Link avalehele.">Lapsepõlvemaagia</MenuLink>
+    <MenuLink to="/ajakava" title="Link ajakava lehele.">Ajakava</MenuLink>
+    <MenuLink to="/kauplejale" title="Link kauplejatele mõeldud infoga lehele.">Kauplejale</MenuLink>
+    <MenuLink to="/sipsik" title="Link Sipsiku ümbermaailmareisi lehele.">Sipsiku ümbermaailmareis</MenuLink>
+    <MenuLink to="/arhiiv" title="Link arhiivi lehele.">Arhiiv</MenuLink>
+    <MenuLink to="/vanavanemad" title="Link küsitluse lehele.">Mis on sinu vanavanemate nimed?</MenuLink>
+    <MenuLink to="/Toetajad" title="Link toetajate lehele.">Toetajad</MenuLink>
 
   </div>
 )
