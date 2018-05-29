@@ -14,7 +14,7 @@ module.exports = {
             resolve: 'gatsby-source-filesystem',
             options: {
                 name: 'pildid',
-                path: 'src\\pages\\Sipsik\\pildid',
+                path: 'src/pages/Sipsik/pildid',
             }
         },
         'gatsby-transformer-sharp',
