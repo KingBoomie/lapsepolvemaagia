@@ -72,7 +72,7 @@ try {
             padding: '1rem 1.0875rem 1.45rem',
           })}
         >
-          {props.children()}
+          {this.props.children()}
         </div>
     
         <Footer />
@@ -80,8 +80,6 @@ try {
     )
   }
 }
-
-const TemplateWrapper = ({ children }) => ;
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func
