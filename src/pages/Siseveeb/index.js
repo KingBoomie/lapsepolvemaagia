@@ -1,3 +1,4 @@
 import React from 'react'
 
-export () => (<div></div>)
+const f = (props) => (<div>Siseveeb</div>)
+export default f
