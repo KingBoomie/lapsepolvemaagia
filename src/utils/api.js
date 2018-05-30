@@ -4,7 +4,7 @@ const socket = openSocket('https://lit-hollows-38242.herokuapp.com')
 function subscribeToCounter(callback) {
     console.log("subscribing...");
     socket.on('connected', data => console.log(data))
-    socket.on('load-count', counter => callback(null, counter))
+    socket.on('load-count', counter => callback(null, counter.payload))
     socket.emit('subscribe-load-counter')
 }
 

@@ -16,6 +16,7 @@ class LoadCounter extends React.Component {
     super(props);
     this.state = { count: 0};
     subscribeToCounter((err,newCount) => {
+      console.log(newCount);
       this.setState({ count: newCount });
     })
   }
