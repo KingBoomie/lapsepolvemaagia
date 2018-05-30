@@ -23,18 +23,13 @@ const fingerprint = timeout
   .then(() => {
     new Fingerprint2().get((res, components) => {
 
-      const merged = [{hash: res}]
+      const merged = [res].concat(components.map(e => e.value))
 
-      components.forEach( e => {
-        const o = {};
-        o[e.key] = e.value;
-        Object.assign(merged, o)})
-
-      console.log(merged)
+      //console.log(merged)
       request().put('/fingerprint', merged)
-        .then(res => console.log(res))
-    })
-  })
+        .then(res => console.log(res.data))
+    
+  })})
   // .then(fp => )
   // .then(res => console.log(res))
 
