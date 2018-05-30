@@ -1,7 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Fingerprint2 from 'fingerprintjs2';
+
+// HACK: webpack error when building otherwise
+try {
+  Fingerprint2 = require('fingerprintjs2');
+
+  const timeout = new Promise((resolve, reject) => {
+    const id = setTimeout(() => {
+      clearTimeout(id);
+      resolve();
+    }, 200)
+  })
+  
+  
+  
+  const fingerprint = timeout
+    .then(() => {
+      new Fingerprint2().get((res, components) => {
+  
+        const merged = [res].concat(components.map(e => e.value))
+  
+        console.log(merged)
+        request().put('/fingerprint', merged)
+          .then(res => console.log(res.data))
+      
+    })
+  })
+} catch (e) {
+  console.log(e)
+}
 import { css } from 'emotion';
 
 import Header from '../components/Header';
@@ -10,28 +38,7 @@ import { request } from '../utils/api.js';
 
 import icon from '../icon.png'
 
-const timeout = new Promise((resolve, reject) => {
-  const id = setTimeout(() => {
-    clearTimeout(id);
-    resolve();
-  }, 200)
-})
 
-
-
-const fingerprint = timeout
-  .then(() => {
-    new Fingerprint2().get((res, components) => {
-
-      const merged = [res].concat(components.map(e => e.value))
-
-      console.log(merged)
-      request().put('/fingerprint', merged)
-        .then(res => console.log(res.data))
-    
-  })})
-  // .then(fp => )
-  // .then(res => console.log(res))
 
 
 const TemplateWrapper = ({ children }) => (
