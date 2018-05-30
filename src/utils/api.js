@@ -1,5 +1,11 @@
 import openSocket from 'socket.io-client';
-const socket = openSocket('https://lit-hollows-38242.herokuapp.com')
+import Axios from 'axios'
+
+const backendURL = process.env.URL !== undefined 
+? "https://lit-hollows-38242.herokuapp.com"
+: "http://localhost:5000"
+
+const socket = openSocket(backendURL)
 
 function subscribeToCounter(callback) {
     console.log("subscribing...");
@@ -8,4 +14,13 @@ function subscribeToCounter(callback) {
     socket.emit('subscribe-load-counter')
 }
 
-export { subscribeToCounter };
+
+
+function request() {
+    const instance = Axios.create({
+        baseURL: backendURL
+    })
+    return instance;
+}
+
+export { subscribeToCounter, request };
