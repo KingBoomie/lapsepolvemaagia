@@ -17,7 +17,7 @@ class TemplateWrapper extends React.Component {
   componentDidMount() {
     // HACK: webpack error when building otherwise
 try {
-  Fingerprint2 = require('fingerprintjs2');
+  const Fingerprint2 = require('fingerprintjs2');
 
   const timeout = new Promise((resolve, reject) => {
     const id = setTimeout(() => {
@@ -26,7 +26,7 @@ try {
     }, 200)
   })
   
-  
+  console.log(Fingerprint2)
   
   const fingerprint = timeout
     .then(() => {
