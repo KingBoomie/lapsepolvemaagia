@@ -9,12 +9,35 @@ import Header from '../components/Header'
 import { catalogs, prefix, deprefix, langFromPath } from '../i18n-config'
 import LangSelector from '../components/LanguageSelector'
 
+import { subscribeToCounter } from '../utils/api.js'
 
+class LoadCounter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0};
+    subscribeToCounter((err,newCount) => {
+      this.setState({ count: newCount });
+    })
+  }
+  
+  render() {
+    return (
+      <div>
+        <p>
+          Arhiivi on vaadatud {this.state.count} korda.
+        </p>
+      </div>
+    )
+  }
+}
 
 const Wrapper = (props) => (
   <div>
     <LangSelector lang={props.lang} onLangClick={props.onLangChange} />
     <Trans render="h1">Hi from Page</Trans> <Trans render = "h1"> Archives</Trans>
+    
+      <LoadCounter/>
+    
     {console.log(props)}
     
   </div>)
