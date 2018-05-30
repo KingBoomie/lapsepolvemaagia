@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 import { css } from 'emotion'
 
-
 const MenuLink = props => (
   <Link
     to={props.to}
@@ -112,13 +111,26 @@ export default props => (
       },
     })}
   >
-    <MenuLink to="/" title="Link avalehele.">Lapsepõlvemaagia</MenuLink>
-    <MenuLink to="/ajakava" title="Link ajakava lehele.">Ajakava</MenuLink>
-    <MenuLink to="/kauplejale" title="Link kauplejatele mõeldud infoga lehele.">Kauplejale</MenuLink>
-    <MenuLink to="/sipsik" title="Link Sipsiku ümbermaailmareisi lehele.">Sipsiku ümbermaailmareis</MenuLink>
-    <MenuLink to="/arhiiv" title="Link arhiivi lehele.">Arhiiv</MenuLink>
-    <MenuLink to="/vanavanemad" title="Link küsitluse lehele.">Mis on sinu vanavanemate nimed?</MenuLink>
-    <MenuLink to="/Toetajad" title="Link toetajate lehele.">Toetajad</MenuLink>
-
+    <MenuLink to="/" title="Link avalehele.">
+      Lapsepõlvemaagia
+    </MenuLink>
+    <MenuLink to="/ajakava" title="Link ajakava lehele.">
+      Ajakava
+    </MenuLink>
+    <MenuLink to="/kauplejale" title="Link kauplejatele mõeldud infoga lehele.">
+      Kauplejale
+    </MenuLink>
+    <MenuLink to="/sipsik" title="Link Sipsiku ümbermaailmareisi lehele.">
+      Sipsiku ümbermaailmareis
+    </MenuLink>
+    <MenuLink to="/arhiiv" title="Link arhiivi lehele.">
+      Arhiiv
+    </MenuLink>
+    <MenuLink to="/vanavanemad" title="Link küsitluse lehele.">
+      Mis on sinu vanavanemate nimed?
+    </MenuLink>
+    <MenuLink to="/Toetajad" title="Link toetajate lehele.">
+      Toetajad
+    </MenuLink>
   </div>
 )

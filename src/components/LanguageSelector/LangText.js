@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const LangText = ({ lang, onClick, selected }) => (
   <a
@@ -12,6 +12,6 @@ const LangText = ({ lang, onClick, selected }) => (
   >
     {lang}
   </a>
-);
+)
 
-export default LangText;
+export default LangText

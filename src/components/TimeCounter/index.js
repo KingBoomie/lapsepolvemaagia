@@ -74,7 +74,7 @@ class TimeCounter extends React.Component {
   }
   useStupidJS() {
     const text = this.getOutputText()
-    document.getElementById('daysleft').innerHTML = `<p>${ text }</p>`
+    document.getElementById('daysleft').innerHTML = `<p>${text}</p>`
   }
   render() {
     return (
@@ -84,6 +84,5 @@ class TimeCounter extends React.Component {
     )
   }
 }
-
 
 export default TimeCounter

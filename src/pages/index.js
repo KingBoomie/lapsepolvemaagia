@@ -1,14 +1,13 @@
-import React from 'react';
-import Link from 'gatsby-link';
-import { cx, css } from 'emotion';
+import React from 'react'
+import Link from 'gatsby-link'
+import { cx, css } from 'emotion'
 
-import HaapsaluMap from '../components/Map';
-import TimeCounter from '../components/TimeCounter';
+import HaapsaluMap from '../components/Map'
+import TimeCounter from '../components/TimeCounter'
 import LangSelector from '../components/LanguageSelector'
 import { I18nProvider, withI18n, Trans } from '@lingui/react'
 import { catalogs, prefix, deprefix, langFromPath } from '../i18n-config'
 import { navigateTo } from 'gatsby-link'
-
 
 const DescriptionStyle = css({
   display: 'flex',
@@ -18,15 +17,13 @@ const DescriptionStyle = css({
   textAlign: 'center',
   fontWeight: '600',
   lineHeight: '1.8',
-});
+})
 
-
-
-const Wrapper = (props) => (
+const Wrapper = props => (
   <div>
-    <LangSelector lang={props.lang} onLangClick={props.onLangChange}/>
-  <div
-    className={css(`
+    <LangSelector lang={props.lang} onLangClick={props.onLangChange} />
+    <div
+      className={css(`
     display: grid;
     grid-gap: 2vmax;
     padding: 1vmax;
@@ -46,59 +43,43 @@ const Wrapper = (props) => (
       
     }
   `)}
-  >   
-  
-    <TimeCounter
-      className={css(`grid-area: box`)}
-      untill={new Date('2018-08-11T11:00:00+03:00')}
-    />
-    <HaapsaluMap
-      className={css(`
+    >
+      <TimeCounter
+        className={css(`grid-area: box`)}
+        untill={new Date('2018-08-11T11:00:00+03:00')}
+      />
+      <HaapsaluMap
+        className={css(`
       grid-area: map;
       height: 300px;
       @media (min-width: 600px) {
         height: 100%;
       }
     `)}
-    />
-    <div className={cx(DescriptionStyle, css({ gridArea: 'desc' }))}>
-       <Trans render="DescriptionStyle">
-      The Childhood Magic                         
-       </Trans>
-      <p></p>
-      <Trans render="DescriptionStyle">
-        We want to
-        </Trans>
-        <p></p>
-        <Trans render="DescriptionStyle">
-        The talented
-        </Trans>
-    </div>
+      />
+      <div className={cx(DescriptionStyle, css({ gridArea: 'desc' }))}>
+        <Trans render="DescriptionStyle">The Childhood Magic</Trans>
+        <p />
+        <Trans render="DescriptionStyle">We want to</Trans>
+        <p />
+        <Trans render="DescriptionStyle">The talented</Trans>
+      </div>
 
-    <div className={cx(DescriptionStyle, css({ gridArea: 'desc2' }))}>
-    <Trans render="DescriptionStyle">
-    The target
-      </Trans>
-      <p></p>
-      <Trans render="DescriptionStyle">
-        The festival
-      </Trans>
-      <p></p>
-      
-      <Trans render="DescriptionStyle">
-      On the one hand
-      </Trans>
-      <p></p> 
-      <Trans render="DescriptionStyle">
-      A great role
-      </Trans>
-      <p></p>
-      <Trans render="DescriptionStyle">This is</Trans>
+      <div className={cx(DescriptionStyle, css({ gridArea: 'desc2' }))}>
+        <Trans render="DescriptionStyle">The target</Trans>
+        <p />
+        <Trans render="DescriptionStyle">The festival</Trans>
+        <p />
+
+        <Trans render="DescriptionStyle">On the one hand</Trans>
+        <p />
+        <Trans render="DescriptionStyle">A great role</Trans>
+        <p />
+        <Trans render="DescriptionStyle">This is</Trans>
+      </div>
     </div>
   </div>
-  </div>
-);
-
+)
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -109,7 +90,6 @@ class IndexPage extends React.Component {
   }
 
   render = () => {
-    
     const lang = langFromPath(this.props.location.pathname)
 
     return (
@@ -117,9 +97,7 @@ class IndexPage extends React.Component {
         <Wrapper {...this.props} lang={lang} onLangChange={this.onLangChange} />
       </I18nProvider>
     )
-
   }
 }
 
-
-export default withI18n()(IndexPage);
+export default withI18n()(IndexPage)

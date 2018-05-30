@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import LangText from './LangText';
+import LangText from './LangText'
 
 const LangSelector = props => (
   <div>
@@ -20,7 +20,6 @@ const LangSelector = props => (
       </p>
     </div>
   </div>
-);
+)
 
-
-export default LangSelector;
+export default LangSelector

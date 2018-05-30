@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'gatsby-link';
-import { css } from 'emotion';
+import React from 'react'
+import Link from 'gatsby-link'
+import { css } from 'emotion'
 
-import banner from './banner.jpg';
-import Menu from './Menu';
+import banner from './banner.jpg'
+import Menu from './Menu'
 
 function Header() {
   return (
@@ -15,8 +15,8 @@ function Header() {
           className={css({ marginBottom: 0 })}
         />
       </Link>
-      <Menu/>
+      <Menu />
     </div>
-  );
+  )
 }
-export default Header;
+export default Header
