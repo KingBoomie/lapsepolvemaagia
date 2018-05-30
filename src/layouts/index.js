@@ -25,7 +25,7 @@ const fingerprint = timeout
 
       const merged = [res].concat(components.map(e => e.value))
 
-      //console.log(merged)
+      console.log(merged)
       request().put('/fingerprint', merged)
         .then(res => console.log(res.data))
     
